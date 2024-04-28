@@ -1,17 +1,16 @@
-//Linea de importación para poder utilizar @Component
+// Linea de importación para poder utilizar el decorador @Component
 import { Component } from "@angular/core";
 
-//DECORADOR
+// DECORADOR. Aquí se construye el selector, la url del template y la url de styles
 @Component({
 
-    //Aquí se construye el selector, la url del template y la url de styles
-    selector: "app-empleados",
+    selector: "app-empleados", // selector -> palabra reservada que se utiliza para incluír este componente en otro
     templateUrl: "./empleados.component.html",
     styleUrls: ["./empleados.component.css"]
     
 })
 
-//CLASE
+// CLASE. Instrucción export (para que sea accesible)
 export class EmpleadosComponent{
 
 }

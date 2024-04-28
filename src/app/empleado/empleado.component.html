@@ -1,25 +1,23 @@
-<!-- Se ha definido en el .ts las variables -->
+<!-- Se han definido en el .ts las propiedades -->
 
 <p>Nombre de la empleada: {{nombre}}</p>
 <p>Apellido de la empleada: {{apellido}}</p>
-<p>Edad de la empleada: {{getEdad()+10}}</p>
+<p>Empresa de la empleada: {{empresa_estatica}}</p>
+<!-- <p>Edad de la empleada: {{getEdad()+5}}</p>  edad es private, acceder a ella con el get -->
 
-//Operador ternario
+<!-- Operador ternario para construir un condicional -->
+<p>Empleado es: {{ edadNueva<18 ? "Menor de edad":"Mayor de edad" }}</p> <!-- condición ? valorsiverdad:valorsifalso -->
 
-<p>Empleado es: {{edadNueva<18 ? "Menor de edad":"Mayor de edad"}}</p>
-
-<p>Empresa del empleado: {{empresa.value}}</p>
+<p>Empresa del empleado: {{empresa_dinamica.value}}</p>
 
 <fieldset>
-<p>Introduce la empresa: <input type="text" #empresa></p>
+<p>Introduce la empresa: <input type="text" #empresa_dinamica></p> <!-- #empresa_dinamica es una variable DE PLANTILLA-->
 
 <br><br>
-<input type="button" value="Dale!" (click)="llamaEmpresa(empresa.value)"/>
+<input type="button" value="Añadir empresa" (click)="llamaEmpresa(empresa_dinamica.value)"/>
 </fieldset>
 
-<p>Evento: {{ejemplo.value}}</p>
+<p>Evento KEYUP: {{ejemplo.value}}</p> <!-- No necesita función -->
 <fieldset>
-    <p>Evento keyup: <input type="text" #ejemplo (keyup)="0"></p>
-    
-    <br><br>
+    <p>Evento keyup: <input type="text" #ejemplo (keyup)="0"></p> <!-- keyup es el evento y 0 el tiempo que debe pasar -->
 </fieldset>
