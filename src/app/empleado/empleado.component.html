@@ -19,5 +19,29 @@
 
 <p>Evento KEYUP: {{ejemplo.value}}</p> <!-- No necesita función -->
 <fieldset>
-    <p>Evento keyup: <input type="text" #ejemplo (keyup)="0"></p> <!-- keyup es el evento y 0 el tiempo que debe pasar -->
+    <p>Evento keyup: <input type="text" #ejemplo (keyup)="0" ></p> <!-- keyup es el evento y 0 el tiempo que debe pasar -->
 </fieldset>
+
+<!-- Este cuadro de texto estará habiitado o no dependiendo de la Binding Property habilitacionCuadro-->
+
+<h2>Binding Property</h2> <!-- El flujo va del TS al HTML -->
+<fieldset>
+  <input type="text" [disabled]="habilitacionCuadro"> <!-- Sin Binding seria disabled="true o false" -->
+</fieldset>
+
+<br><br>
+<h2>Event Binding</h2> <!-- El flujo va del HTML al TS -->
+{{textoDeRegistro}}
+<p>Registrado: <input type="checkbox" id="registro" [checked]="usuRegistrado" (click)="setUsuarioRegistrado()"></p>
+
+{{getRegistroUsuario()}}
+<br><br>
+<fieldset>
+<h3>Binding</h3>
+{{textoDeRegistro2}}
+<p>Registrado: <input type="radio" value="si" name="nRegistro" id="idRadio" (click)="setUsuarioRegistrado2($event)"></p>
+<p>No Registrado: <input type="radio" value="no" name="nRegistro" (click)="setUsuarioRegistrado2($event)"></p>
+</fieldset>
+
+<p>El Binding bidireccional -> {{variable}}</p>
+Introduce la variable: <input type="text" [(ngModel)]="variable"> 
